@@ -1,0 +1,96 @@
+@import url('http://fonts.cdnfonts.com/css/gotham');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+:root {
+    --theme-background-body: #262626;
+    --theme-background-body-medium: #181818;
+    --theme-text: #FDFDFD;
+    --theme-text-subtle: #C7C7C7;
+    --theme-border-color: #707070;
+    --theme-primary-base: #FF6E07;
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: var(--theme-primary-base);
+}
+
+::selection {
+    background: var(--theme-primary-base);
+}
+
+
+html, select, textarea {
+    font-style: normal;
+    font-weight: 100;
+    background-color: var(--theme-background-body);
+    font-family: 'Gotham', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a, p, span, li, h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-text);
+}
+
+label {
+    color: var(--theme-border-color);
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+input, textarea, select, option {
+    font-size: 16px;
+}
+
+*::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+    margin: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--theme-background-body-medium); /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--theme-border-color); /* color of the scroll thumb */
+    border-radius: 10px; /* roundness of the scroll thumb */
+    border: 3px solid var(--theme-background-body-medium); /* creates padding around scroll thumb */
+}
+.menu-hide::-webkit-scrollbar-track {
+    background-color: var(--theme-background-body);
+}
+
+.menu-hide::-webkit-scrollbar-thumb {
+    border: 3px solid var(--theme-background-body);
+}

@@ -1,0 +1,323 @@
+@import "./globalVariables.css";
+
+
+.preloader {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background: var(--theme-background-body);
+}
+
+.preloader-title {
+    color: var(--theme-text);
+    margin-bottom: 3vh;
+}
+
+.preloader-bar {
+    background-color: var(--theme-background-body-medium);
+    width: 19rem;
+    height: 5px;
+    border-radius: 20px;
+}
+
+.loader {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 5px;
+    background-color: var(--theme-primary-base);
+    border-radius: 20px;
+}
+
+.loader.run {
+    animation: run .25s;
+    animation-delay: .15s;
+    animation-fill-mode: forwards;
+}
+
+.animate {
+    background-color: var(--theme-primary-base);
+    width: 100%;
+    height: 100%;
+}
+
+.fadeOut {
+    animation: fadeOut 1s;
+    animation-delay: .25s;
+    animation-fill-mode: forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes run {
+    100% {
+        width: 100%;
+    }
+}
+
+
+.homepage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    animation: addHomepage 1s ease;
+    min-height: 100vh;
+}
+
+@keyframes addHomepage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.left-bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw / 5 * 3);
+    height: 100vh;
+}
+
+.headline {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(100vh / 2 - 5rem);
+    left: calc(100% / 5);
+}
+
+
+.headline-text {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--theme-border-color);
+    text-decoration-thickness: 1px;
+}
+
+.littlebox {
+    background-color: var(--theme-primary-base);
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    position: relative;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    background-color: var(--theme-background-body-medium);
+    width: calc(100vw / 5 * 2);
+    height: 100vh;
+}
+
+.logo-box {
+    position: absolute;
+    background-color: var(--theme-primary-base);
+    width: 200px;
+    height: 200px;
+    -webkit-box-shadow: 3px 2px 15px 4px var(--theme-background-body); 
+    box-shadow: 3px 2px 15px 4px var(--theme-background-body);
+}
+
+.load-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 2vh;
+    width: 25vh;
+    right: 20vw;
+}
+
+
+.load-text span {
+    font-weight: 50;
+    font-size: 35px;
+    margin: 0 2vw;
+}
+
+.fade-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.fade-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.fade-in-top {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 3s ease;
+}
+
+.fade-in-bottom {
+    transform: translateY(250%);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+@media screen and (max-width: 480px) {
+    .homepage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .left-bar {
+        width: 100vw;
+    }
+}
+
+.scroll-container {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.scroll-down {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    height: 50px;
+    width: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.scroll-container h3 {
+    width: 200px;
+    margin: 1rem auto;
+}
+
+.scroll-down::before {
+    animation: scrollDownAnimation 2s infinite;
+    background-color: #fff;
+    border-radius: 100%;
+    content: '';
+    height: 6px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 6px;
+}
+
+@-moz-keyframes scrollDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes scrollDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes scrollDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes scrollDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 764px) {
+    .scroll-container {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .homepage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
